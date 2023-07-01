@@ -11,7 +11,7 @@ on:
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-
+  SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,7 +19,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+  
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}  
+  
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -37,3 +42,14 @@ jobs:
         run: |
           docker build -t quando/be_chuyende:${{ github.sha }} .
           docker push quando/be_chuyende:${{ github.sha }}
+          
+      - name: Connect to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: 3.1.70.193
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
+            sudo docker-compose down &&
+            sudo docker-compose pull &&
+            sudo docker-copmose up -d
