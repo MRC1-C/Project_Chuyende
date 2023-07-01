@@ -1,0 +1,39 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKERHUB_USERNAME }}
+          password: ${{ env.DOCKERHUB_TOKEN }}
+
+      - name: Build and push FE image
+        working-directory: ./FE
+        run: |
+          docker build -t quando/fe_chuyende:${{ github.sha }} .
+          docker push quando/fe_chuyende:${{ github.sha }}
+
+      - name: Build and push BE image
+        working-directory: ./BE
+        run: |
+          docker build -t quando/be_chuyende:${{ github.sha }} .
+          docker push quando/be_chuyende:${{ github.sha }}
