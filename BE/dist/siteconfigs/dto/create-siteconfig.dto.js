@@ -14,11 +14,11 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateSiteConfigDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: String, required: true }),
+    swagger_1.ApiProperty({ type: String, required: true }),
     __metadata("design:type", String)
 ], CreateSiteConfigDto.prototype, "name", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: String, required: true }),
+    swagger_1.ApiProperty({ type: String, required: true }),
     __metadata("design:type", String)
 ], CreateSiteConfigDto.prototype, "value", void 0);
 exports.CreateSiteConfigDto = CreateSiteConfigDto;

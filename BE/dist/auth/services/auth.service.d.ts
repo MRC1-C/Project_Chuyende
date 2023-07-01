@@ -1,3 +1,4 @@
+/// <reference types="mongoose" />
 import { UsersService } from 'src/users/services/users.service';
 import { SignInDto } from '../dto/sign-in.dto';
 import { SignUpDto } from '../dto/sign-up.dto';
@@ -10,10 +11,10 @@ export declare class AuthService {
     signUp(data: SignUpDto): Promise<import("../../users/schema/user.schema").UserDocument>;
     signIn(data: SignInDto): Promise<{
         accessToken: string;
-        credential: any;
+        credential: Partial<import("mongoose").LeanDocument<import("../../users/schema/user.schema").UserDocument>>;
     }>;
     activeAccount(body: ActiveDto, token: string): Promise<{
         accessToken: string;
-        credential: any;
+        credential: Partial<import("mongoose").LeanDocument<import("../../users/schema/user.schema").UserDocument>>;
     }>;
 }

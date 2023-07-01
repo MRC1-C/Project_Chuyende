@@ -16,7 +16,7 @@ const user_schema_1 = require("./schema/user.schema");
 let UsersModule = class UsersModule {
 };
 UsersModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: user_schema_1.User.name, schema: user_schema_1.UserSchema }]),
         ],

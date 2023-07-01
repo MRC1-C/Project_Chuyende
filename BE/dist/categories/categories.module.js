@@ -17,7 +17,7 @@ const images_module_1 = require("../images/images.module");
 let CategoriesModule = class CategoriesModule {
 };
 CategoriesModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: category_schema_1.Category.name, schema: category_schema_1.CategorySchema }]),
             images_module_1.ImagesModule,

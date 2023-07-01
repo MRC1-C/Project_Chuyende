@@ -33,16 +33,16 @@ let ImagesController = class ImagesController {
     }
 };
 __decorate([
-    (0, common_1.Get)(':filename'),
-    __param(0, (0, common_1.Param)('filename')),
-    __param(1, (0, common_1.Res)()),
+    common_1.Get(':filename'),
+    __param(0, common_1.Param('filename')),
+    __param(1, common_1.Res()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], ImagesController.prototype, "getImage", null);
 ImagesController = __decorate([
-    (0, common_1.Controller)('images'),
-    (0, swagger_1.ApiTags)('images')
+    common_1.Controller('images'),
+    swagger_1.ApiTags('images')
 ], ImagesController);
 exports.ImagesController = ImagesController;
 //# sourceMappingURL=images.controller.js.map

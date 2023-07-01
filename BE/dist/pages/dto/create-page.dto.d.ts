@@ -1,5 +1,5 @@
 import { LANGUAGE } from 'src/config/enum';
-type namePage = {
+declare type namePage = {
     name: string;
     language: LANGUAGE;
 };

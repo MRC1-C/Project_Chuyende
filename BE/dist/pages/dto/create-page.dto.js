@@ -15,11 +15,11 @@ const enum_1 = require("../../config/enum");
 class CreatePageDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: [Object], required: true }),
+    swagger_1.ApiProperty({ type: [Object], required: true }),
     __metadata("design:type", Array)
 ], CreatePageDto.prototype, "name", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: String, required: true }),
+    swagger_1.ApiProperty({ type: String, required: true }),
     __metadata("design:type", String)
 ], CreatePageDto.prototype, "paths", void 0);
 exports.CreatePageDto = CreatePageDto;

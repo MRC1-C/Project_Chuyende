@@ -33,7 +33,7 @@ let CategoriesService = class CategoriesService {
     }
 };
 CategoriesService = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [categories_repository_1.CategoriesRepository])
 ], CategoriesService);
 exports.CategoriesService = CategoriesService;

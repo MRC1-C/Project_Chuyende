@@ -16,22 +16,22 @@ const configuration_1 = require("../../config/configuration");
 let User = class User {
 };
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], User.prototype, "username", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String,
-        default: (0, bcrypt_1.hashSync)('12345678', configuration_1.configs.saltOrRound),
+        default: bcrypt_1.hashSync('12345678', configuration_1.configs.saltOrRound),
     }),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: Array,
         default: ['ADMIN'],
@@ -39,7 +39,7 @@ __decorate([
     __metadata("design:type", Array)
 ], User.prototype, "role", void 0);
 User = __decorate([
-    (0, mongoose_1.Schema)({
+    mongoose_1.Schema({
         timestamps: true
     })
 ], User);

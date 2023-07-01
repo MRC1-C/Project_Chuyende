@@ -1,14 +1,12 @@
-import  { useEffect } from 'react'
-import data from '@/mockdata.json'
-import Items from '@/component/Items'
-import { useDispatch, useSelector } from 'react-redux';
+import ItemsProduct from '@/component/ItemsProduct';
+import { postRequest } from '@/hook/api';
 import { RootState } from '@/store';
-import { useLocation, useOutlet } from 'react-router-dom';
 import { setAppState, setCurrentHeaderProductState, setCurrentHeaderState, setHeaderProductState, setHeaderState } from '@/store/features/appStateSlice';
 import { setDataProduct } from '@/store/features/productStateSlice';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useOutlet } from 'react-router-dom';
 import { TypeCategory } from '../Admin/componentsAdmin/Category';
-import { postRequest } from '@/hook/api';
-import ItemsProduct from '@/component/ItemsProduct';
 export const Product = () => {
   const { dataProduct } = useSelector((state: RootState) => (state.productState));
   const { language } = useSelector((state: RootState) => (state.appState));

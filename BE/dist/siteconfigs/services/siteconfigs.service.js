@@ -33,7 +33,7 @@ let SiteConfigsService = class SiteConfigsService {
     }
 };
 SiteConfigsService = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [siteconfigs_repository_1.SiteConfigsRepository])
 ], SiteConfigsService);
 exports.SiteConfigsService = SiteConfigsService;

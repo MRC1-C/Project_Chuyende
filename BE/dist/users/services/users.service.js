@@ -33,7 +33,7 @@ let UsersService = class UsersService {
     }
 };
 UsersService = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [user_repository_1.UsersRepository])
 ], UsersService);
 exports.UsersService = UsersService;

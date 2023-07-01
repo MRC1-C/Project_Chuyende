@@ -14,42 +14,42 @@ const mongoose_1 = require("@nestjs/mongoose");
 let Category = class Category {
 };
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: [Object]
     }),
     __metadata("design:type", Array)
 ], Category.prototype, "name", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: [Object]
     }),
     __metadata("design:type", Array)
 ], Category.prototype, "description", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String
     }),
     __metadata("design:type", String)
 ], Category.prototype, "parent_id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String,
     }),
     __metadata("design:type", String)
 ], Category.prototype, "url", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], Category.prototype, "page", void 0);
 Category = __decorate([
-    (0, mongoose_1.Schema)({
+    mongoose_1.Schema({
         timestamps: true
     })
 ], Category);

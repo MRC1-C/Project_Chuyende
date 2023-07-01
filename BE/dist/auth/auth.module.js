@@ -18,7 +18,7 @@ const jwt_strategy_1 = require("./strategy/jwt.strategy");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [
             passport_1.PassportModule,
             jwt_1.JwtModule.register({

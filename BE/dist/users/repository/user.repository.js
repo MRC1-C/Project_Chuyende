@@ -39,8 +39,8 @@ let UsersRepository = class UsersRepository {
     }
 };
 UsersRepository = __decorate([
-    (0, common_1.Injectable)(),
-    __param(0, (0, mongoose_2.InjectModel)(user_schema_1.User.name)),
+    common_1.Injectable(),
+    __param(0, mongoose_2.InjectModel(user_schema_1.User.name)),
     __metadata("design:paramtypes", [mongoose_1.Model])
 ], UsersRepository);
 exports.UsersRepository = UsersRepository;

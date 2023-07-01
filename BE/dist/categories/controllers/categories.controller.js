@@ -68,64 +68,64 @@ let CategoriesController = class CategoriesController {
     }
 };
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Post(),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_category_dto_1.CreateCategoryDto]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "create", null);
 __decorate([
-    (0, common_1.Post)('find'),
-    __param(0, (0, common_1.Body)()),
+    common_1.Post('find'),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [update_category_dto_1.UpdateCategoryDto]),
     __metadata("design:returntype", void 0)
 ], CategoriesController.prototype, "findByFillter", null);
 __decorate([
-    (0, common_1.Post)('search'),
-    __param(0, (0, common_1.Body)()),
+    common_1.Post('search'),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "findBySearch", null);
 __decorate([
-    (0, common_1.Get)(),
-    __param(0, (0, common_1.Body)()),
+    common_1.Get(),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [update_category_dto_1.UpdateCategoryDto]),
     __metadata("design:returntype", void 0)
 ], CategoriesController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    common_1.Get(':id'),
+    __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], CategoriesController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __param(1, (0, common_1.Body)()),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Patch(':id'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_category_dto_1.UpdateCategoryDto]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "update", null);
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Delete(':id'),
+    __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "remove", null);
 CategoriesController = __decorate([
-    (0, common_1.Controller)('categories'),
-    (0, swagger_1.ApiTags)('Categories'),
+    common_1.Controller('categories'),
+    swagger_1.ApiTags('Categories'),
     __metadata("design:paramtypes", [categories_service_1.CategoriesService, images_service_1.ImagesService])
 ], CategoriesController);
 exports.CategoriesController = CategoriesController;

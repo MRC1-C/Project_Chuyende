@@ -1,11 +1,12 @@
+import { getRequest } from '@/hook/api'
+import { RootState } from '@/store'
 import { setCurrentHeaderProductState } from '@/store/features/appStateSlice'
+import { Image, Tabs } from 'antd'
+import Item from 'antd/es/list/Item'
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { TypeProduct } from '../Admin/componentsAdmin/Product'
-import { getRequest } from '@/hook/api'
-import { Image, Tabs } from 'antd'
-import { RootState } from '@/store'
 import { StringTable } from '../Home/ProductDetail'
 
 const ProductProductDeltail = () => {
@@ -61,7 +62,12 @@ const ProductProductDeltail = () => {
                   <div className='flex flex-row'><p className='text-xs text-[#575757] font-semibold pr-1' >Size:</p> <p className='text-xs text-[#1C1F23] font-semibold'>{data.size}</p></div>
                   <div className='flex flex-row'><p className='text-xs text-[#575757] font-semibold pr-1' >Weight:</p> <p className='text-xs text-[#1C1F23] font-semibold'>{data.weight}</p></div>
                   <p className='text-xl font-bold pt-2' style={{ borderTop: '1px solid lightgray' }}>{new Intl.NumberFormat('en-DE').format(data.price) + ' đ'}</p>
-                  <pre className='whitespace-pre-wrap'>{data.description[language].des}</pre>
+                  <pre className='whitespace-pre-wrap'>{data.description[language].des}</pre>        
+                  <div>
+                    <span className="badge badge-primary" style={{cursor:'pointer'}}
+                      onClick={() =>this.props.AddCart(Item)}><i className="fa fa-shopping-cart"></i>
+                    </span>
+            </div>
                 </div>
               </div>
             </div>
@@ -92,5 +98,4 @@ const ProductProductDeltail = () => {
     </div >
   )
 }
-
 export default ProductProductDeltail

@@ -18,7 +18,7 @@ const categories_module_1 = require("../categories/categories.module");
 let ProductsModule = class ProductsModule {
 };
 ProductsModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: product_schema_1.Product.name, schema: product_schema_1.ProductSchema }]),
             images_module_1.ImagesModule,

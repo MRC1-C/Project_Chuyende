@@ -42,7 +42,7 @@ let ImagesService = class ImagesService {
     }
 };
 ImagesService = __decorate([
-    (0, common_1.Injectable)()
+    common_1.Injectable()
 ], ImagesService);
 exports.ImagesService = ImagesService;
 //# sourceMappingURL=images.service.js.map

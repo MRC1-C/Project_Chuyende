@@ -14,11 +14,11 @@ const swagger_1 = require("@nestjs/swagger");
 class UpdateUserDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ required: false, type: String }),
+    swagger_1.ApiProperty({ required: false, type: String }),
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "password", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ required: false, type: Boolean }),
+    swagger_1.ApiProperty({ required: false, type: Boolean }),
     __metadata("design:type", Boolean)
 ], UpdateUserDto.prototype, "isActive", void 0);
 exports.UpdateUserDto = UpdateUserDto;

@@ -14,11 +14,11 @@ const swagger_1 = require("@nestjs/swagger");
 class ActiveDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", String)
 ], ActiveDto.prototype, "old_password", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", String)
 ], ActiveDto.prototype, "password", void 0);
 exports.ActiveDto = ActiveDto;

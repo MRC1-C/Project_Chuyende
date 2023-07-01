@@ -39,8 +39,8 @@ let SiteConfigsRepository = class SiteConfigsRepository {
     }
 };
 SiteConfigsRepository = __decorate([
-    (0, common_1.Injectable)(),
-    __param(0, (0, mongoose_2.InjectModel)(siteconfig_schema_1.SiteConfig.name)),
+    common_1.Injectable(),
+    __param(0, mongoose_2.InjectModel(siteconfig_schema_1.SiteConfig.name)),
     __metadata("design:paramtypes", [mongoose_1.Model])
 ], SiteConfigsRepository);
 exports.SiteConfigsRepository = SiteConfigsRepository;

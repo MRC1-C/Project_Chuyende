@@ -96,72 +96,72 @@ let ProductsController = class ProductsController {
     }
 };
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Post(),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_product_dto_1.CreateProductDto]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)(),
+    common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], ProductsController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Post)('find'),
-    __param(0, (0, common_1.Body)()),
+    common_1.Post('find'),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [update_product_dto_1.UpdateProductDto]),
     __metadata("design:returntype", void 0)
 ], ProductsController.prototype, "findByFillter", null);
 __decorate([
-    (0, common_1.Post)('search'),
-    __param(0, (0, common_1.Body)()),
+    common_1.Post('search'),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "findBySearch", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    common_1.Get(':id'),
+    __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ProductsController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __param(1, (0, common_1.Body)()),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Patch(':id'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_product_dto_1.UpdateProductDto]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "update", null);
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Post)('deleteByParentID'),
-    __param(0, (0, common_1.Body)()),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Post('deleteByParentID'),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "removeByParentID", null);
 __decorate([
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
-    (0, swagger_1.ApiBearerAuth)('authorization'),
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    swagger_1.ApiBearerAuth('authorization'),
+    common_1.Delete(':id'),
+    __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "remove", null);
 ProductsController = __decorate([
-    (0, common_1.Controller)('products'),
-    (0, swagger_1.ApiTags)('Products'),
+    common_1.Controller('products'),
+    swagger_1.ApiTags('Products'),
     __metadata("design:paramtypes", [products_service_1.ProductsService, images_service_1.ImagesService, categories_service_1.CategoriesService])
 ], ProductsController);
 exports.ProductsController = ProductsController;

@@ -42,8 +42,8 @@ let ProductsRepository = class ProductsRepository {
     }
 };
 ProductsRepository = __decorate([
-    (0, common_1.Injectable)(),
-    __param(0, (0, mongoose_2.InjectModel)(product_schema_1.Product.name)),
+    common_1.Injectable(),
+    __param(0, mongoose_2.InjectModel(product_schema_1.Product.name)),
     __metadata("design:paramtypes", [mongoose_1.Model])
 ], ProductsRepository);
 exports.ProductsRepository = ProductsRepository;

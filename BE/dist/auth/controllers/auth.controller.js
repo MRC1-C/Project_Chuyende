@@ -37,29 +37,29 @@ let AuthController = class AuthController {
     }
 };
 __decorate([
-    (0, common_1.Post)('sign-up'),
-    __param(0, (0, common_1.Body)(signUpValidation_pipe_1.SignUpValidation)),
+    common_1.Post('sign-up'),
+    __param(0, common_1.Body(signUpValidation_pipe_1.SignUpValidation)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [sign_up_dto_1.SignUpDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "signUp", null);
 __decorate([
-    (0, common_1.Post)('sign-in'),
-    __param(0, (0, common_1.Body)(signInValidation_pipe_1.SignInValidation)),
+    common_1.Post('sign-in'),
+    __param(0, common_1.Body(signInValidation_pipe_1.SignInValidation)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [sign_in_dto_1.SignInDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "signIn", null);
 __decorate([
-    (0, common_1.Get)('check'),
-    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
+    common_1.Get('check'),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "activeAccount", null);
 AuthController = __decorate([
-    (0, swagger_1.ApiTags)('Authentication'),
-    (0, common_1.Controller)('auth'),
+    swagger_1.ApiTags('Authentication'),
+    common_1.Controller('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], AuthController);
 exports.AuthController = AuthController;

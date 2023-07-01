@@ -14,21 +14,21 @@ const mongoose_1 = require("@nestjs/mongoose");
 let SiteConfig = class SiteConfig {
 };
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], SiteConfig.prototype, "name", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], SiteConfig.prototype, "value", void 0);
 SiteConfig = __decorate([
-    (0, mongoose_1.Schema)({
+    mongoose_1.Schema({
         timestamps: true
     })
 ], SiteConfig);

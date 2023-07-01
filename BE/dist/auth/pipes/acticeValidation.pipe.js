@@ -27,7 +27,7 @@ let ActiveValidation = class ActiveValidation {
     }
 };
 ActiveValidation = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], ActiveValidation);
 exports.ActiveValidation = ActiveValidation;

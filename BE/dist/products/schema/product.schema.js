@@ -15,73 +15,73 @@ const mongodb_1 = require("mongodb");
 let Product = class Product {
 };
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: Array,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "name", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         type: Array,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "description", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String,
     }),
     __metadata("design:type", String)
 ], Product.prototype, "condition", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String,
     }),
     __metadata("design:type", String)
 ], Product.prototype, "size", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String,
     }),
     __metadata("design:type", String)
 ], Product.prototype, "weight", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: String,
     }),
     __metadata("design:type", String)
 ], Product.prototype, "url", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: Array,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "images", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    mongoose_1.Prop(),
     __metadata("design:type", String)
 ], Product.prototype, "category_id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: mongodb_1.Double,
     }),
     __metadata("design:type", Number)
 ], Product.prototype, "price", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: false,
         type: mongodb_1.Double,
     }),
     __metadata("design:type", Number)
 ], Product.prototype, "discounts", void 0);
 Product = __decorate([
-    (0, mongoose_1.Schema)({
+    mongoose_1.Schema({
         timestamps: true
     })
 ], Product);

@@ -14,15 +14,15 @@ const swagger_1 = require("@nestjs/swagger");
 class SignUpDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", String)
 ], SignUpDto.prototype, "username", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", String)
 ], SignUpDto.prototype, "password", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", Array)
 ], SignUpDto.prototype, "role", void 0);
 exports.SignUpDto = SignUpDto;

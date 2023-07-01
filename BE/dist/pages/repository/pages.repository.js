@@ -39,8 +39,8 @@ let PagesRepository = class PagesRepository {
     }
 };
 PagesRepository = __decorate([
-    (0, common_1.Injectable)(),
-    __param(0, (0, mongoose_2.InjectModel)(page_schema_1.Page.name)),
+    common_1.Injectable(),
+    __param(0, mongoose_2.InjectModel(page_schema_1.Page.name)),
     __metadata("design:paramtypes", [mongoose_1.Model])
 ], PagesRepository);
 exports.PagesRepository = PagesRepository;

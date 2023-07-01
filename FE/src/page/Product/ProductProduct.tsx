@@ -1,14 +1,12 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { useLocation, useOutlet, useParams } from 'react-router-dom';
-import data from '@/mockdata.json'
+import ItemsProduct from '@/component/ItemsProduct';
+import { postRequest } from '@/hook/api';
 import { RootState } from '@/store';
-import Items from '@/component/Items';
 import { setCurrentHeaderProductState, setCurrentHeaderState, setHeaderProductState } from '@/store/features/appStateSlice';
 import { setDataProductProduct } from '@/store/features/productStateSlice';
-import { postRequest } from '@/hook/api';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useOutlet, useParams } from 'react-router-dom';
 import { TypeProduct } from '../Admin/componentsAdmin/Product';
-import ItemsProduct from '@/component/ItemsProduct';
 
 
 const ProductProduct = () => {
@@ -40,8 +38,9 @@ const ProductProduct = () => {
             {
                 outlet ? outlet :
                     <div className='grid grid-cols-2 md:grid-cols-4 gap-6 py-8 px-3 md:px-0'>
-                        {dataProductProduct.map(dt => <ItemsProduct path={dt.name[0].name} price={dt.price.toString()} des={dt.description[language].des} type='H' key={dt._id.toString()} id={dt._id} name={dt.name[language].name} url={dt.url} />)}
+                        {dataProductProduct.map(dt => <ItemsProduct path={dt.name[0].name} price={dt.price.toString()} des={dt.description[language].des} type='H' key={dt._id.toString()} id={dt._id} name={dt.name[language].name} url={dt.url} />)}                                                                     
                     </div>
+                
             }
         </>
     )

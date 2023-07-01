@@ -23,12 +23,12 @@ let AuthService = class AuthService {
         this.jwtService = jwtService;
     }
     async signUp(data) {
-        data.password = (0, bcrypt_1.hashSync)(data.password, configuration_1.configs.saltOrRound);
+        data.password = bcrypt_1.hashSync(data.password, configuration_1.configs.saltOrRound);
         return await this.userService.create(data);
     }
     async signIn(data) {
         const user = await this.userService.findOne({ username: data.username });
-        const credential = (0, lodash_1.omit)(user.toObject(), [
+        const credential = lodash_1.omit(user.toObject(), [
             'password',
             'createdAt',
             'updatedAt',
@@ -45,12 +45,12 @@ let AuthService = class AuthService {
         if (!user) {
             throw new common_1.UnauthorizedException('User can not found');
         }
-        if ((0, bcrypt_1.compareSync)(body.old_password, user.password)) {
+        if (bcrypt_1.compareSync(body.old_password, user.password)) {
             const updated = await this.userService.update(verified._id, {
-                password: (0, bcrypt_1.hashSync)(body.password, configuration_1.configs.saltOrRound),
+                password: bcrypt_1.hashSync(body.password, configuration_1.configs.saltOrRound),
                 isActive: true,
             });
-            const credential = (0, lodash_1.omit)(updated.toObject(), [
+            const credential = lodash_1.omit(updated.toObject(), [
                 'password',
                 'createdAt',
                 'updatedAt',
@@ -65,7 +65,7 @@ let AuthService = class AuthService {
     }
 };
 AuthService = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [users_service_1.UsersService,
         jwt_1.JwtService])
 ], AuthService);

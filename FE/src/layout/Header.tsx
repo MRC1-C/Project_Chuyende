@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import logo from '@/assets/logo.png'
-import phone from '@/assets/phone.png'
-import map from '@/assets/map.png'
 import search from '@/assets/Shape.png'
-import { Drawer, Image, Select, Input } from 'antd'
-import "./Header.css"
-import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '@/store'
-import appRoutes from '@/router/appRoutes'
-import { CloseCircleOutlined, CloseOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import logo from '@/assets/logo.png'
+import map from '@/assets/map.png'
+import phone from '@/assets/phone.png'
 import { postRequest } from '@/hook/api'
 import { TypeFind } from '@/page/Find'
-import { clearStateApp, setAppState, setHeaderState, setLangauge } from '@/store/features/appStateSlice'
+import appRoutes from '@/router/appRoutes'
+import { RootState } from '@/store'
+import { clearStateApp, setLangauge } from '@/store/features/appStateSlice'
+import { CloseCircleOutlined, CloseOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import { Drawer, Image, Input, Select } from 'antd'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import "./Header.css"
 const { Search } = Input;
 const Header = () => {
     const { appState, headerState, headerProductState, currentHeader, currentHeaderProduct, language } = useSelector((state: RootState) => (state.appState));
@@ -173,11 +173,11 @@ const Header = () => {
                         <div className='flex flex-col gap-3'>
                             <div className='font-bold text-xs'>
                                 <Image src={phone} preview={false} width={14} className='pr-1' />
-                                0927.20.20.20
+                                0987.654.321
                             </div>
                             <div className='font-bold text-xs'>
                                 <Image src={map} preview={false} width={14} className='pr-1' />
-                                06 Bùi Đạt, phường An Hưng, TP Thanh Hóa
+                                Hai Bà Trưng, Hà Nội
                             </div>
                         </div>
                     </div>

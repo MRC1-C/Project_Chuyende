@@ -20,7 +20,7 @@ const images_module_1 = require("./images/images.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [
             config_1.ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
             mongoose_1.MongooseModule.forRoot(process.env.MONGO_DB, {

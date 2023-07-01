@@ -1,14 +1,14 @@
 import { Document } from 'mongoose';
-export type ProductDocument = Product & Document;
-type typeName = {
+export declare type ProductDocument = Product & Document;
+declare type typeName = {
     name: string;
     language: string;
 };
-type typeDes = {
+declare type typeDes = {
     des: string;
     language: string;
 };
-type typeImage = {
+declare type typeImage = {
     name: typeName[];
     url: string;
     description: typeDes[];
@@ -25,5 +25,5 @@ export declare class Product {
     price: number;
     discounts?: number;
 }
-export declare const ProductSchema: import("mongoose").Schema<Document<Product, any, any>, import("mongoose").Model<any, any, any>, undefined, any>;
+export declare const ProductSchema: import("mongoose").Schema<Document<Product, any>, import("mongoose").Model<any, any, any>, undefined, any>;
 export {};

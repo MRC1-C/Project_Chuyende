@@ -1,10 +1,10 @@
 import { Document } from 'mongoose';
-export type CategoryDocument = Category & Document;
-type typeName = {
+export declare type CategoryDocument = Category & Document;
+declare type typeName = {
     name: string;
     language: string;
 };
-type typeDes = {
+declare type typeDes = {
     des: string;
     language: string;
 };
@@ -15,5 +15,5 @@ export declare class Category {
     url?: string;
     page: string;
 }
-export declare const CategorySchema: import("mongoose").Schema<Document<Category, any, any>, import("mongoose").Model<any, any, any>, undefined, any>;
+export declare const CategorySchema: import("mongoose").Schema<Document<Category, any>, import("mongoose").Model<any, any, any>, undefined, any>;
 export {};

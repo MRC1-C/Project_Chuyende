@@ -33,7 +33,7 @@ let PagesService = class PagesService {
     }
 };
 PagesService = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [pages_repository_1.PagesRepository])
 ], PagesService);
 exports.PagesService = PagesService;

@@ -14,23 +14,23 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateCategoryDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: [Object], required: true }),
+    swagger_1.ApiProperty({ type: [Object], required: true }),
     __metadata("design:type", Array)
 ], CreateCategoryDto.prototype, "name", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: [Object], required: true }),
+    swagger_1.ApiProperty({ type: [Object], required: true }),
     __metadata("design:type", Array)
 ], CreateCategoryDto.prototype, "description", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ required: false }),
+    swagger_1.ApiProperty({ required: false }),
     __metadata("design:type", String)
 ], CreateCategoryDto.prototype, "url", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: String, required: false }),
+    swagger_1.ApiProperty({ type: String, required: false }),
     __metadata("design:type", String)
 ], CreateCategoryDto.prototype, "parent_id", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: String, required: true }),
+    swagger_1.ApiProperty({ type: String, required: true }),
     __metadata("design:type", String)
 ], CreateCategoryDto.prototype, "page", void 0);
 exports.CreateCategoryDto = CreateCategoryDto;

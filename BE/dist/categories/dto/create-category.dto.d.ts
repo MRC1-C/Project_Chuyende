@@ -1,8 +1,8 @@
-type typeName = {
+declare type typeName = {
     name: string;
     language: string;
 };
-type typeDes = {
+declare type typeDes = {
     des: string;
     language: string;
 };

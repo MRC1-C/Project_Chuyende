@@ -15,21 +15,21 @@ const enum_1 = require("../../config/enum");
 let Page = class Page {
 };
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: [Object],
     }),
     __metadata("design:type", Array)
 ], Page.prototype, "name", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({
+    mongoose_1.Prop({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], Page.prototype, "paths", void 0);
 Page = __decorate([
-    (0, mongoose_1.Schema)({
+    mongoose_1.Schema({
         timestamps: true
     })
 ], Page);

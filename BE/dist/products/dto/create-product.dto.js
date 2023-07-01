@@ -14,55 +14,55 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateProductDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: [Object], required: true }),
+    swagger_1.ApiProperty({ type: [Object], required: true }),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "name", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: [Object] }),
+    swagger_1.ApiProperty({ type: [Object] }),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "description", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({
+    swagger_1.ApiProperty({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "condition", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({
+    swagger_1.ApiProperty({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "size", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({
+    swagger_1.ApiProperty({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "weight", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({
+    swagger_1.ApiProperty({
         required: true,
         type: String,
     }),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "url", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ required: true }),
+    swagger_1.ApiProperty({ required: true }),
     __metadata("design:type", Number)
 ], CreateProductDto.prototype, "price", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ required: true }),
+    swagger_1.ApiProperty({ required: true }),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "images", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: String, required: true }),
+    swagger_1.ApiProperty({ type: String, required: true }),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "category_id", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", Number)
 ], CreateProductDto.prototype, "discounts", void 0);
 exports.CreateProductDto = CreateProductDto;

@@ -36,7 +36,7 @@ let ProductsService = class ProductsService {
     }
 };
 ProductsService = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [product_repository_1.ProductsRepository])
 ], ProductsService);
 exports.ProductsService = ProductsService;

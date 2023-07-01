@@ -15,7 +15,7 @@ async function bootstrap() {
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);
-    app.use((0, body_parser_1.json)({ limit: '50mb' }));
+    app.use(body_parser_1.json({ limit: '50mb' }));
     await app.listen(3303);
 }
 bootstrap();

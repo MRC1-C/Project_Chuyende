@@ -28,13 +28,13 @@ let SignInValidation = class SignInValidation {
         if (!user) {
             return { id: null };
         }
-        if (!(0, bcrypt_1.compareSync)(password, user.password)) {
+        if (!bcrypt_1.compareSync(password, user.password)) {
             throw new common_1.UnauthorizedException('Username/password is invalid');
         }
     }
 };
 SignInValidation = __decorate([
-    (0, common_1.Injectable)(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], SignInValidation);
 exports.SignInValidation = SignInValidation;

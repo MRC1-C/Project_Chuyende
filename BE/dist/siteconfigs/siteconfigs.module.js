@@ -16,7 +16,7 @@ const siteconfig_schema_1 = require("./schema/siteconfig.schema");
 let SiteConfigsModule = class SiteConfigsModule {
 };
 SiteConfigsModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: siteconfig_schema_1.SiteConfig.name, schema: siteconfig_schema_1.SiteConfigSchema }]),
         ],

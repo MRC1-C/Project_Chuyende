@@ -12,9 +12,9 @@ const common_1 = require("@nestjs/common");
 let BadRequestExceptionFilter = class BadRequestExceptionFilter {
     catch(exception, host) {
         const errorResponse = exception === null || exception === void 0 ? void 0 : exception.getResponse();
-        const error = (Array.isArray((0, lodash_1.get)(errorResponse, 'message'))
-            ? (0, lodash_1.first)((0, lodash_1.get)(errorResponse, 'message'))
-            : (0, lodash_1.get)(errorResponse, 'message')) || exception.message;
+        const error = (Array.isArray(lodash_1.get(errorResponse, 'message'))
+            ? lodash_1.first(lodash_1.get(errorResponse, 'message'))
+            : lodash_1.get(errorResponse, 'message')) || exception.message;
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const status = exception.getStatus();
@@ -25,7 +25,7 @@ let BadRequestExceptionFilter = class BadRequestExceptionFilter {
     }
 };
 BadRequestExceptionFilter = __decorate([
-    (0, common_1.Catch)(common_1.BadRequestException)
+    common_1.Catch(common_1.BadRequestException)
 ], BadRequestExceptionFilter);
 exports.BadRequestExceptionFilter = BadRequestExceptionFilter;
 //# sourceMappingURL=error.js.map

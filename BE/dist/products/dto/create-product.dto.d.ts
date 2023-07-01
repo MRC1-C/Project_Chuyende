@@ -1,12 +1,12 @@
-type typeName = {
+declare type typeName = {
     name: string;
     language: string;
 };
-type typeDes = {
+declare type typeDes = {
     des: string;
     language: string;
 };
-export type typeImage = {
+export declare type typeImage = {
     name: typeName[];
     url: string;
     description: typeDes[];

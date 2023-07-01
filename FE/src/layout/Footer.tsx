@@ -1,11 +1,11 @@
-import { Image } from 'antd'
 import logo from '@/assets/logo.png'
-import appRoutes from '@/router/appRoutes'
-import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
-import phone from '@/assets/phone.png'
 import map from '@/assets/map.png'
+import phone from '@/assets/phone.png'
+import appRoutes from '@/router/appRoutes'
+import { RootState } from '@/store'
+import { Image } from 'antd'
+import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
   const { appState, language } = useSelector((state: RootState) => (state.appState));
@@ -18,9 +18,6 @@ const Footer = () => {
             <div className='flex flex-row items-center cursor-pointer' onClick={() => navigate('/')}>
               <Image preview={false} width={24} src={logo} />
               <div className='pl-2 font-semibold'>DUS BEETLES</div>
-            </div>
-            <div className='pt-6 font-bold'>
-              Cty TNHH TM&DV nam phát KTV
             </div>
           </div>
           <div className='col-span-1 flex flex-col md:items-center'>
@@ -40,11 +37,11 @@ const Footer = () => {
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={phone} preview={false} width={14} className='pr-1' />
-                  0927.20.20.20
+                  0987.654.321
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={map} preview={false} width={14} className='pr-1' />
-                  06 Bùi Đạt, phường An Hưng, TP Thanh Hóa
+                  Hai Bà Trưng, Hà Nội
                   {/* {language == 0 ? '06 Bùi Đạt, phường An Hưng, TP Thanh Hóa' : 'Store Address'} */}
                 </div>
                 <div className='w-full h-40 bg-white'>

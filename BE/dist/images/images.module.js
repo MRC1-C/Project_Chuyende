@@ -14,7 +14,7 @@ const platform_express_1 = require("@nestjs/platform-express");
 let ImagesModule = class ImagesModule {
 };
 ImagesModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [platform_express_1.MulterModule.register({
                 dest: './uploads',
             })],
