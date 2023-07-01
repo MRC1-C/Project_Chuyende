@@ -34,14 +34,14 @@ jobs:
       - name: Build and push FE image
         working-directory: ./FE
         run: |
-          docker build -t quando/fe_chuyende:${{ github.sha }} .
-          docker push quando/fe_chuyende:${{ github.sha }}
+          docker build -t quando/fe_chuyende:latest .
+          docker push quando/fe_chuyende:latest
 
       - name: Build and push BE image
         working-directory: ./BE
         run: |
-          docker build -t quando/be_chuyende:${{ github.sha }} .
-          docker push quando/be_chuyende:${{ github.sha }}
+          docker build -t quando/be_chuyende:latest .
+          docker push quando/be_chuyende:latest
           
       - name: Connect to EC2
         uses: appleboy/ssh-action@master
