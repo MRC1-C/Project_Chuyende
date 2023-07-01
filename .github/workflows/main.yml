@@ -50,6 +50,6 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
-            sudo docker-compose down &&
-            sudo docker-compose pull &&
+            sudo docker-compose down
+            sudo docker-compose pull
             sudo docker-copmose up -d
