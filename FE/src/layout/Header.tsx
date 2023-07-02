@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import logo from '@/assets/logo.png'
+import logo from '@/assets/logo.jpg'
 import phone from '@/assets/phone.png'
 import map from '@/assets/map.png'
 import search from '@/assets/Shape.png'
-import { Drawer, Image, Select, Input } from 'antd'
+import { Drawer, Image, Select, Input, Badge } from 'antd'
 import "./Header.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import appRoutes from '@/router/appRoutes'
-import { CloseCircleOutlined, CloseOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import { CloseCircleOutlined, CloseOutlined, MenuUnfoldOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import { postRequest } from '@/hook/api'
 import { TypeFind } from '@/page/Find'
 import { clearStateApp, setAppState, setHeaderState, setLangauge } from '@/store/features/appStateSlice'
 const { Search } = Input;
 const Header = () => {
     const { appState, headerState, headerProductState, currentHeader, currentHeaderProduct, language } = useSelector((state: RootState) => (state.appState));
+    const { cart } = useSelector((state: RootState) => (state.cartState));
     const [open, setOpen] = useState(false);
     const [opneMenu, setOpenMenu] = useState(false)
     const [dataSearch, setDataSearch] = useState<Array<TypeFind>>([] as Array<TypeFind>)
@@ -66,7 +67,7 @@ const Header = () => {
                 <div className='container mx-auto flex flex-row justify-between items-center'>
                     <div className='flex flex-row items-center cursor-pointer' onClick={() => navigate('/')}>
                         <Image src={logo} width={24} />
-                        <div className='text-2xl pl-2 font-semibold'>DUS BEETLES</div>
+                        <div className='text-2xl pl-2 font-semibold'>MrCJ</div>
                     </div>
                     <div className='flex flex-row gap-6 justify-between items-center'>
                         {
@@ -76,6 +77,13 @@ const Header = () => {
                         }
                     </div>
                     <div className='flex flex-row items-center gap-3'>
+                        <div className='px-3'>
+                            <Badge count={cart.length} offset={[0,10]} size='small'>
+                                <div className='flex flex-row items-center'>
+                                    <ShoppingCartOutlined className='cursor-pointer text-gray-400 text-2xl pt-2' onClick={() => navigate('/cart')} />
+                                </div>
+                            </Badge>
+                        </div>
                         <Image src={search} className='cursor-pointer' onClick={() => showDrawer()} preview={false} width={20} />
                         {
                             windowSize.width > 1024 ?

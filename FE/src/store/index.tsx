@@ -9,6 +9,7 @@ import appAdminStateSlice from "./features/appAdminStateSlice";
 import homeAdminStateSlice from "./features/homeAdminStateSlice";
 import drawerCategoryStateSlice from "./features/drawerCategoryStateSlice";
 import drawerProductStateSlice from "./features/drawerProductStateSlice";
+import cartStateSlice from "./features/cartStateSlice";
 
 export const store = configureStore({
   reducer: {
@@ -22,7 +23,7 @@ export const store = configureStore({
     homeAdminState: homeAdminStateSlice,
     drawerCategoryState: drawerCategoryStateSlice,
     drawerProductState: drawerProductStateSlice,
-
+    cartState: cartStateSlice
   }
 });
 

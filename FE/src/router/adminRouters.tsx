@@ -2,6 +2,8 @@ import { RouteType } from "./config";
 import Login from "@/page/Login";
 import UserAdmin from "@/page/Admin/UserAdmin";
 import Admin from "@/page/Admin/Admin";
+import CartsAdmin from "@/page/Admin/CartsAdmin";
+import RevenueAdmin from "@/page/Admin/RevenueAdmin";
 
 const adminRoutes: RouteType[] = [
   {
@@ -69,6 +71,18 @@ const adminRoutes: RouteType[] = [
     path: "user",
     label: ['User'],
     state: 'user',
+  },
+  {
+    element: <CartsAdmin />,
+    path: "carts",
+    label: ['Carts'],
+    state: 'carts',
+  },
+  {
+    element: <RevenueAdmin />,
+    path: "revenue",
+    label: ['Revenue'],
+    state: 'revenue',
   }
 ];
 

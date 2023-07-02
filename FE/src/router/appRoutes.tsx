@@ -14,6 +14,7 @@ import ProductCase from "@/page/Case/ProductCase";
 import ProductCaseDetail from "@/page/Case/ProductCaseDetail";
 import ServicesDetail from "@/page/Services/ServicesDetail";
 import Find from "@/page/Find";
+import Cart from "@/page/Cart";
 
 const appRoutes: RouteType[] = [
   {
@@ -98,6 +99,10 @@ const appRoutes: RouteType[] = [
   {
     element: <Find />,
     path: "find",
+  },
+  {
+    element: <Cart />,
+    path: "cart",
   }
 ];
 

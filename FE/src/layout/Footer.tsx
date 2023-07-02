@@ -1,5 +1,5 @@
 import { Image } from 'antd'
-import logo from '@/assets/logo.png'
+import logo from '@/assets/logo.jpg'
 import appRoutes from '@/router/appRoutes'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -17,10 +17,10 @@ const Footer = () => {
           <div className='col-span-1 pb-6 md:pb-0'>
             <div className='flex flex-row items-center cursor-pointer' onClick={() => navigate('/')}>
               <Image preview={false} width={24} src={logo} />
-              <div className='pl-2 font-semibold'>DUS BEETLES</div>
+              <div className='pl-2 font-semibold'>MrCJ</div>
             </div>
             <div className='pt-6 font-bold'>
-              Cty TNHH TM&DV nam phát KTV
+              Cty TNHH CJ
             </div>
           </div>
           <div className='col-span-1 flex flex-col md:items-center'>
@@ -40,11 +40,11 @@ const Footer = () => {
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={phone} preview={false} width={14} className='pr-1' />
-                  0927.20.20.20
+                  0374*****
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={map} preview={false} width={14} className='pr-1' />
-                  06 Bùi Đạt, phường An Hưng, TP Thanh Hóa
+                  Hust
                   {/* {language == 0 ? '06 Bùi Đạt, phường An Hưng, TP Thanh Hóa' : 'Store Address'} */}
                 </div>
                 <div className='w-full h-40 bg-white'>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='p-3 text-[#CDCDCD] text-xs'>
-          Copyright © DUS BEETLES All rights reserved.
+          MrCJ
         </div>
       </div>
     </div>

@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useParams } from 'react-router-dom'
 import { TypeProduct } from '../Admin/componentsAdmin/Product'
 import { getRequest } from '@/hook/api'
-import { Image, Tabs } from 'antd'
+import { Button, Image, Tabs, message } from 'antd'
 import { RootState } from '@/store'
 import { StringTable } from '../Home/ProductDetail'
+import { addCard } from '@/store/features/cartStateSlice'
 
 const ProductProductDeltail = () => {
   const { productsID } = useParams()
@@ -62,6 +63,7 @@ const ProductProductDeltail = () => {
                   <div className='flex flex-row'><p className='text-xs text-[#575757] font-semibold pr-1' >Weight:</p> <p className='text-xs text-[#1C1F23] font-semibold'>{data.weight}</p></div>
                   <p className='text-xl font-bold pt-2' style={{ borderTop: '1px solid lightgray' }}>{new Intl.NumberFormat('en-DE').format(data.price) + ' đ'}</p>
                   <pre className='whitespace-pre-wrap'>{data.description[language].des}</pre>
+                  <Button onClick={() => { dispatch(addCard({ name: data.name[language].name, price: data.price, image: data.url, quantity: 1 })); message.success(language==0? "Đã thêm vào giỏ hàng": 'Added to cart') }} type='primary' size='large'>{language == 0 ? "Thêm vào giỏ hàng" : "Add Card"}</Button>
                 </div>
               </div>
             </div>
