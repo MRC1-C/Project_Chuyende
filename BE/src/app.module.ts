@@ -8,8 +8,9 @@ import { PagesModule } from './pages/pages.module';
 import { CategoriesModule } from './categories/categories.module';
 import { SiteConfigsModule } from './siteconfigs/siteconfigs.module';
 import { ImagesModule } from './images/images.module';
+import { CartsModule } from './carts/carts.module';
 
-@Module({
+@Module({ 
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGO_DB, {
@@ -23,7 +24,8 @@ import { ImagesModule } from './images/images.module';
     CategoriesModule,
     ProductsModule,
     SiteConfigsModule,
-    ImagesModule
+    ImagesModule,
+    CartsModule,
   ],
 })
 export class AppModule { }

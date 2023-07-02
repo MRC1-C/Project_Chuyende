@@ -17,6 +17,7 @@ const pages_module_1 = require("./pages/pages.module");
 const categories_module_1 = require("./categories/categories.module");
 const siteconfigs_module_1 = require("./siteconfigs/siteconfigs.module");
 const images_module_1 = require("./images/images.module");
+const carts_module_1 = require("./carts/carts.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -34,7 +35,8 @@ AppModule = __decorate([
             categories_module_1.CategoriesModule,
             products_module_1.ProductsModule,
             siteconfigs_module_1.SiteConfigsModule,
-            images_module_1.ImagesModule
+            images_module_1.ImagesModule,
+            carts_module_1.CartsModule,
         ],
     })
 ], AppModule);
