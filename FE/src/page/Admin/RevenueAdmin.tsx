@@ -11,14 +11,15 @@ const RevenueAdmin = () => {
     const [data, setData] = useState<Array<Data>>([])
     useEffect(() => {
         try {
-            (async () => {
+            (async () => {  
                 let dt = await getRequest('/carts/all')
                 setData(dt)
+                console.log(dt)
             })()
         } catch (error) {
             console.log(error)
         }
-    })
+    },[])
     return (
         <div>
             <Chart
