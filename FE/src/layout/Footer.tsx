@@ -40,11 +40,11 @@ const Footer = () => {
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={phone} preview={false} width={14} className='pr-1' />
-                  0374*****
+                  0981093411
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={map} preview={false} width={14} className='pr-1' />
-                  Hust
+                  Thôn Tử Đông, xã Lý Thường Kiệt, huyện Yên Mỹ, tỉnh Hưng Yên
                   {/* {language == 0 ? '06 Bùi Đạt, phường An Hưng, TP Thanh Hóa' : 'Store Address'} */}
                 </div>
                 <div className='w-full h-40 bg-white'>

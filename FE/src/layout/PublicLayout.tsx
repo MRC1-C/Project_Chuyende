@@ -2,7 +2,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { Outlet } from 'react-router-dom'
 // @ts-ignore
-// import MessengerCustomerChat from 'react-messenger-customer-chat'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 const PublicLayout = () => {
     return (
@@ -16,11 +16,11 @@ const PublicLayout = () => {
             <div className='bg-black'>
                 <Footer />
             </div>
-            {/* <MessengerCustomerChat
+            <MessengerCustomerChat
                 pageId="112942438446480"
                 appId="773407067514617"
                 language="vn-VN"
-            /> */}
+            />
         </div>
     )
 }

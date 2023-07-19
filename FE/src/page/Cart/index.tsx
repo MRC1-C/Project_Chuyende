@@ -4,25 +4,32 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import CartItem from './CartItem'
-import { Button, Divider, Input } from 'antd'
+import { Button, Divider, Image, Input, message } from 'antd'
 import { clearCard, setAdressCart, setNameCart, setPhoneCart } from '@/store/features/cartStateSlice'
 import { postRequest } from '@/hook/api'
+import cartlogo from '@/assets/cart.png'
 
 const Cart = () => {
     const { language } = useSelector((state: RootState) => state.appState)
     const { cart, name, phone, address } = useSelector((state: RootState) => state.cartState)
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     useEffect(() => {
         dispatch(setHeaderState([]))
         dispatch(setHeaderProductState([]))
         dispatch(setAppState(''))
     }, [dispatch])
     return (
-        <div className='my-3 px-3 md:px-0 grid grid-cols-1 md:grid-cols-3'>
+        <div className='my-3 px-3 md:px-0 grid grid-cols-1 md:grid-cols-3 gap-3'>
             <div className='col-span-2'>
-                {cart.map((c, index) => <CartItem key={index} index={index} name={c.name} price={c.price} image={c.image} quantity={c.quantity} />)}
+                {
+                    cart.length <= 0 ?
+                        <div>
+                            <div className='font-semibold'> Hãy liên hệ với số điện thoại 0981093411 để được hỗ trợ</div>
+                            <Image preview={false} src={cartlogo}></Image>
+                        </div> :
+                        cart.map((c, index) => <CartItem key={index} index={index} name={c.name} price={c.price} image={c.image} quantity={c.quantity} />)
+                }
             </div>
             <div className='col-span-1 py-4'>
                 <div className='border-[1px] border-black border-solid rounded-md p-2'>
@@ -45,7 +52,7 @@ const Cart = () => {
                         <div>
                             Tiền sản phẩm:
                         </div>
-                        <div>{new Intl.NumberFormat('en-DE').format(cart.reduce((sum, c) => sum + c.price, 0))}</div>
+                        <div>{new Intl.NumberFormat('en-DE').format(cart.reduce((sum, c) => sum + c.price * c.quantity, 0))}</div>
                     </div>
                     <div className='flex flex-row justify-between'>
                         <div>
@@ -58,9 +65,19 @@ const Cart = () => {
                         <div>
                             Tổng tiền:
                         </div>
-                        <div>{new Intl.NumberFormat('en-DE').format((cart.reduce((sum, c) => sum + c.price, 0) + 20000))}</div>
+                        <div>{new Intl.NumberFormat('en-DE').format((cart.reduce((sum, c) => sum + c.price * c.quantity, 0) + 20000))}</div>
                     </div>
-                    <Button onClick={() => { postRequest('/carts', { name, phone, address, cart }); dispatch(clearCard()) }} type='primary' disabled={cart.length <= 0} className='w-full my-4'>Đặt hàng</Button>
+                    <Button onClick={() => {
+                        if (name && phone && address) {
+                            postRequest('/carts', { name, phone, address, cart });
+                            dispatch(clearCard());
+                            message.success("Bạn đã đặt hàng thành công")
+                        }
+                        else {
+                            message.info("Bạn chưa điền đủ thông tin")
+
+                        }
+                    }} type='primary' disabled={cart.length <= 0} className='w-full my-4'>Đặt hàng</Button>
                 </div>
             </div>
         </div>

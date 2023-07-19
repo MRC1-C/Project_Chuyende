@@ -30,7 +30,7 @@ const CartsAdmin = () => {
         }
     })
     const onActive = (id: string) => {
-        getRequest("/carts/"+ id )
+        getRequest("/carts/" + id)
     }
     return (
         <div className='flex flex-col gap-4'>
@@ -43,7 +43,7 @@ const CartsAdmin = () => {
                     {
                         c.cart.map(ca => <div>
                             <div>{ca.name}</div>
-                            <div>{new Intl.NumberFormat('en-DE').format(ca.price)}</div>
+                            <div>{new Intl.NumberFormat('en-DE').format(ca.price)} x {ca.quantity}</div>
                         </div>)
                     }
                     <div className='font-semibold'>Số tiền: {new Intl.NumberFormat('en-DE').format((c.cart.reduce((sum, c) => sum + c.price, 0) + 20000))}</div>

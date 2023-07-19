@@ -30,12 +30,12 @@ export const cardStateSlice = createSlice({
     reducers: {
         addCard: (state, action: PayloadAction<TypeCard>) => {
             let item = state.cart.find(c => c.name == action.payload.name)
-            if(!item){
+            if (!item) {
                 state.cart.push(action.payload);
             }
         },
         removeCard: (state, action: PayloadAction<number>) => {
-            state.cart.splice(action.payload,1)
+            state.cart.splice(action.payload, 1)
         },
         clearCard: (state) => {
             state.cart = [];
@@ -49,6 +49,14 @@ export const cardStateSlice = createSlice({
         setAdressCart: (state, action: PayloadAction<string>) => {
             state.address = action.payload
         },
+        setaddQuantity: (state, action: PayloadAction<number>) => {
+            state.cart[action.payload].quantity += 1
+        },
+        setremoveQuantity: (state, action: PayloadAction<number>) => {
+            if (state.cart[action.payload].quantity > 1) {
+                state.cart[action.payload].quantity -= 1
+            }
+        },
     }
 });
 
@@ -58,7 +66,9 @@ export const {
     clearCard,
     setNameCart,
     setAdressCart,
-    setPhoneCart
+    setPhoneCart,
+    setaddQuantity,
+    setremoveQuantity
 } = cardStateSlice.actions;
 
 export default cardStateSlice.reducer;
