@@ -1,6 +1,6 @@
-import { getRequest, postRequest } from '@/hook/api'
+import { getRequest } from '@/hook/api'
 import { Button } from 'antd'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type typeCart = {
     name: string,
@@ -46,7 +46,7 @@ const CartsAdmin = () => {
                             <div>{new Intl.NumberFormat('en-DE').format(ca.price)} x {ca.quantity}</div>
                         </div>)
                     }
-                    <div className='font-semibold'>Số tiền: {new Intl.NumberFormat('en-DE').format((c.cart.reduce((sum, c) => sum + c.price, 0) + 20000))}</div>
+                    <div className='font-semibold'>Số tiền: {new Intl.NumberFormat('en-DE').format((c.cart.reduce((sum, c) => sum + c.price, 0) + 1000))}</div>
                 </div>
                 <div>
                     <Button type='primary' onClick={() => onActive(c._id)}>Active</Button>

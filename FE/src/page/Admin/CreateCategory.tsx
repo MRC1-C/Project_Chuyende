@@ -3,10 +3,9 @@ import { RootState } from '@/store'
 import { closeDrawerCategory, setReload } from '@/store/features/appAdminStateSlice'
 import { setDes, setName, setURL } from '@/store/features/drawerCategoryStateSlice'
 import { CloseOutlined, InboxOutlined } from '@ant-design/icons'
-import { Button, Col, Drawer, Form, FormInstance, Image, Input, Row, Select, Space, UploadProps, message } from 'antd'
+import { Button, Col, Drawer, Image, Input, Row, Space, UploadProps, message } from 'antd'
 import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
 import Dragger from 'antd/es/upload/Dragger'
-import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -71,7 +70,7 @@ const CreateCategory = () => {
             >
                 <Row gutter={16}>
                     <Col span={12}>
-                        <p>Ten</p>
+                        <p>Tên</p>
                         <Input value={name[0].name} onChange={(e) => dispatch(setName({ name: e.target.value, language: 'vn' }))} placeholder="Please enter user name" />
                     </Col>
                     <Col span={12}>

@@ -28,8 +28,8 @@ let UsersService = class UsersService {
     async update(id, updateUserDto) {
         return await this.usersRepository.update(id, updateUserDto);
     }
-    remove(id) {
-        return `This action removes a #${id} user`;
+    async remove(id) {
+        return await this.usersRepository.delete(id);
     }
 };
 UsersService = __decorate([

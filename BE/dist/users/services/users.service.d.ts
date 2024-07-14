@@ -9,5 +9,5 @@ export declare class UsersService {
     findAll(): Promise<import("../schema/user.schema").UserDocument[]>;
     findOne(filter: FilterQuery<any>): Promise<import("../schema/user.schema").UserDocument>;
     update(id: string, updateUserDto: UpdateUserDto): Promise<import("../schema/user.schema").UserDocument>;
-    remove(id: number): string;
+    remove(id: string): Promise<import("../schema/user.schema").UserDocument>;
 }

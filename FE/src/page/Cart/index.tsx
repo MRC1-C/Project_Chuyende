@@ -1,13 +1,12 @@
+import cartlogo from '@/assets/cart.png'
+import { postRequest } from '@/hook/api'
 import { RootState } from '@/store'
 import { setAppState, setHeaderProductState, setHeaderState } from '@/store/features/appStateSlice'
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import CartItem from './CartItem'
-import { Button, Divider, Image, Input, message } from 'antd'
 import { clearCard, setAdressCart, setNameCart, setPhoneCart } from '@/store/features/cartStateSlice'
-import { postRequest } from '@/hook/api'
-import cartlogo from '@/assets/cart.png'
+import { Button, Divider, Image, Input, message } from 'antd'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import CartItem from './CartItem'
 
 const Cart = () => {
     const { language } = useSelector((state: RootState) => state.appState)
@@ -25,7 +24,7 @@ const Cart = () => {
                 {
                     cart.length <= 0 ?
                         <div>
-                            <div className='font-semibold'> Hãy liên hệ với số điện thoại 0981093411 để được hỗ trợ</div>
+                            <div className='font-semibold'> Hãy liên hệ với số điện thoại 0987654321 để được hỗ trợ</div>
                             <Image preview={false} src={cartlogo}></Image>
                         </div> :
                         cart.map((c, index) => <CartItem key={index} index={index} name={c.name} price={c.price} image={c.image} quantity={c.quantity} />)
@@ -58,14 +57,14 @@ const Cart = () => {
                         <div>
                             Phí giao hàng:
                         </div>
-                        <div>{new Intl.NumberFormat('en-DE').format(20000)}</div>
+                        <div>{new Intl.NumberFormat('en-DE').format(1000)}</div>
                     </div>
                     <Divider />
                     <div className='font-semibold flex flex-row justify-between'>
                         <div>
                             Tổng tiền:
                         </div>
-                        <div>{new Intl.NumberFormat('en-DE').format((cart.reduce((sum, c) => sum + c.price * c.quantity, 0) + 20000))}</div>
+                        <div>{new Intl.NumberFormat('en-DE').format((cart.reduce((sum, c) => sum + c.price * c.quantity, 0) + 1000))}</div>
                     </div>
                     <Button onClick={() => {
                         if (name && phone && address) {

@@ -1,11 +1,10 @@
+import { deleteImageName, setImageDes, setImageName, setImageUrl } from '@/store/features/drawerProductStateSlice'
 import { CloseOutlined, InboxOutlined } from '@ant-design/icons'
 import { Button, Col, Image, Input, Row, UploadProps, message } from 'antd'
 import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
 import Dragger from 'antd/es/upload/Dragger'
-import React from 'react'
-import { typeImage } from './Product'
 import { useDispatch } from 'react-redux'
-import { deleteImageName, setImageDes, setImageName, setImageUrl } from '@/store/features/drawerProductStateSlice'
+import { typeImage } from './Product'
 
 export type TypeImagesProduct = {
     data: typeImage;
@@ -70,7 +69,7 @@ const ImagesProduct = (props: TypeImagesProduct) => {
             </Row>
             <Row gutter={16}>
                 <Col span={12}>
-                    <p>Ten</p>
+                    <p>Tên</p>
                     <Input value={props.data.name[0].name} onChange={(e) => { dispatch(setImageName({ key: props.keyImages, name: e.target.value, language: 'vn' })) }} placeholder="please enter url description" />
                 </Col>
                 <Col span={12}>

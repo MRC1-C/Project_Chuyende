@@ -1,14 +1,14 @@
 import { patchRequest, postRequest } from '@/hook/api'
 import { RootState } from '@/store'
 import { closeDrawerProduct, setReload } from '@/store/features/appAdminStateSlice'
-import { Button, Col, Drawer, Form, FormInstance, Image, Input, InputNumber, Row, Select, Space, UploadProps, message } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
-import ImagesProduct from './componentsAdmin/ImagesProduct'
 import { addImage, setCondition, setDesProduct, setDiscounts, setNameProduct, setPrice, setProductURL, setSize, setWeight } from '@/store/features/drawerProductStateSlice'
-import { useParams } from 'react-router-dom'
-import Dragger from 'antd/es/upload/Dragger'
 import { CloseOutlined, InboxOutlined } from '@ant-design/icons'
+import { Button, Col, Drawer, Image, Input, InputNumber, Row, Space, UploadProps, message } from 'antd'
 import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
+import Dragger from 'antd/es/upload/Dragger'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import ImagesProduct from './componentsAdmin/ImagesProduct'
 
 
 const CreateProduct = () => {
@@ -80,11 +80,11 @@ const CreateProduct = () => {
             >
                 <Row gutter={16}>
                     <Col span={12}>
-                        <p>name</p>
+                        <p>Name</p>
                         <Input value={name[0].name} onChange={(e) => dispatch(setNameProduct({ name: e.target.value, language: 'vn' }))} placeholder="Please enter user name" />
                     </Col>
                     <Col span={12}>
-                        <p>Ten</p>
+                        <p>Tên</p>
                         <Input value={name[1].name} onChange={(e) => dispatch(setNameProduct({ name: e.target.value, language: 'en' }))} placeholder="Please enter user name" />
                     </Col>
                 </Row>

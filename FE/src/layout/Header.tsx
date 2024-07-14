@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import logo from '@/assets/logo.jpg'
-import phone from '@/assets/phone.png'
-import map from '@/assets/map.png'
 import search from '@/assets/Shape.png'
-import { Drawer, Image, Select, Input, Badge } from 'antd'
-import "./Header.css"
-import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '@/store'
-import appRoutes from '@/router/appRoutes'
-import { CloseCircleOutlined, CloseOutlined, MenuUnfoldOutlined, ShoppingCartOutlined } from '@ant-design/icons'
+import logo from '@/assets/logo.jpg'
+import map from '@/assets/map.png'
+import phone from '@/assets/phone.png'
 import { postRequest } from '@/hook/api'
 import { TypeFind } from '@/page/Find'
-import { clearStateApp, setAppState, setHeaderState, setLangauge } from '@/store/features/appStateSlice'
+import appRoutes from '@/router/appRoutes'
+import { RootState } from '@/store'
+import { clearStateApp, setLangauge } from '@/store/features/appStateSlice'
+import { CloseCircleOutlined, CloseOutlined, MenuUnfoldOutlined, ShoppingCartOutlined } from '@ant-design/icons'
+import { Badge, Drawer, Image, Input, Select } from 'antd'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import "./Header.css"
 const { Search } = Input;
 const Header = () => {
     const { appState, headerState, headerProductState, currentHeader, currentHeaderProduct, language } = useSelector((state: RootState) => (state.appState));
@@ -67,7 +67,7 @@ const Header = () => {
                 <div className='container mx-auto flex flex-row justify-between items-center'>
                     <div className='flex flex-row items-center cursor-pointer' onClick={() => navigate('/')}>
                         <Image src={logo} width={24} />
-                        <div className='text-2xl pl-2 font-semibold'>MrCJ</div>
+                        <div className='text-2xl pl-2 font-semibold'>HNPharmacy</div>
                     </div>
                     <div className='flex flex-row gap-6 justify-between items-center'>
                         {

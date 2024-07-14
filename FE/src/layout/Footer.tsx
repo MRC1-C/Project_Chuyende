@@ -1,11 +1,11 @@
-import { Image } from 'antd'
 import logo from '@/assets/logo.jpg'
-import appRoutes from '@/router/appRoutes'
-import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
-import phone from '@/assets/phone.png'
 import map from '@/assets/map.png'
+import phone from '@/assets/phone.png'
+import appRoutes from '@/router/appRoutes'
+import { RootState } from '@/store'
+import { Image } from 'antd'
+import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
   const { appState, language } = useSelector((state: RootState) => (state.appState));
@@ -17,10 +17,10 @@ const Footer = () => {
           <div className='col-span-1 pb-6 md:pb-0'>
             <div className='flex flex-row items-center cursor-pointer' onClick={() => navigate('/')}>
               <Image preview={false} width={24} src={logo} />
-              <div className='pl-2 font-semibold'>MrCJ</div>
+              <div className='pl-2 font-semibold'>HNPharmacy</div>
             </div>
             <div className='pt-6 font-bold'>
-              Cty TNHH CJ
+              Hiệu thuốc Hà Nội
             </div>
           </div>
           <div className='col-span-1 flex flex-col md:items-center'>
@@ -40,12 +40,12 @@ const Footer = () => {
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={phone} preview={false} width={14} className='pr-1' />
-                  0981093411
+                  0987654321
                 </div>
                 <div className='font-bold text-xs'>
                   <Image src={map} preview={false} width={14} className='pr-1' />
-                  Thôn Tử Đông, xã Lý Thường Kiệt, huyện Yên Mỹ, tỉnh Hưng Yên
-                  {/* {language == 0 ? '06 Bùi Đạt, phường An Hưng, TP Thanh Hóa' : 'Store Address'} */}
+                  Hai Bà Trưng, Hà Nội
+                  {}
                 </div>
                 <div className='w-full h-40 bg-white'>
                   <iframe className='w-full h-full' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15016.626371239125!2d105.72982512076418!3d19.79095689456106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3136f8385a153211%3A0x2ab0438ee603b47e!2zQW4gSG_huqFjaCwgVGhhbmggSG_DoSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1684458079864!5m2!1svi!2s"></iframe>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='p-3 text-[#CDCDCD] text-xs'>
-          MrCJ
+          Hiệu thuốc Hà Nội
         </div>
       </div>
     </div>
